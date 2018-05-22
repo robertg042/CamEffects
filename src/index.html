@@ -13,13 +13,17 @@
 </header>
 <main class="main">
   <video id="camera" src="">No video</video>
+  <button id="duplicate">Duplicate</button>
   <button id="snap">Snap</button>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
   <label for="filter-select">Choose filter</label>
   <select name="filter-select" id="filter-select">
     <option value="original">Origin</option>
-    <option value="grayscale">Grayscale</option>
+    <option value="greyscale">Greyscale</option>
   </select>
   <canvas id="canvas"></canvas>
+  <canvas id="filteredCanvas"></canvas>
   <div id="photos"></div>
 </main>
 <footer class="footer">
