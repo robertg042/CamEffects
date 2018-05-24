@@ -40,7 +40,9 @@ filterSelect.addEventListener("change", event => {
     case FilterTypes.ORIGINAL:
     case FilterTypes.BLUR_GAUSSIAN:
     case FilterTypes.BLUR_BOX:
-    case FilterTypes.SHARPEN: {
+    case FilterTypes.SHARPEN:
+    case FilterTypes.GRAIN:
+    case FilterTypes.EDGE: {
       filterLevelContainer.style.display = "none";
       break;
     }
@@ -103,6 +105,13 @@ const outputVideoOnCanvas = () => {
           break;
         case FilterTypes.SHARPEN:
           subpixels = Filters.convolute(subpixels, Weights.sharpenWeights);
+          break;
+        case FilterTypes.GRAIN:
+          subpixels = Filters.convolute(subpixels, Weights.grainWeights);
+          break;
+        case FilterTypes.EDGE:
+          subpixels = Filters.greyscale(subpixels, 100);
+          subpixels = Filters.convolute(subpixels, Weights.edgeWeights);
           break;
         default:
       }

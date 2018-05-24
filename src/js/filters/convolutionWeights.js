@@ -22,10 +22,23 @@ export const negativeWeights = [-1,  0,  0,
                                  0, -1,  0,
                                  0,  0, -1];
 
-export const edgeWeights = [-1, -1, -1
-                            -1,  8, -1
-                            -1, -1, -1];
+export const edgeWeights = [0, 1, 0,
+                            1, 4, 1,
+                            0, 1, 0];
 
-export const customWeights = [ 1,  1,   1,
+export const edge2Weights = [0, 1, 0,
+                             1, 8, 1,
+                             0, 1, 0];
+
+
+export const embossWeights = [2, 1, 0,
+                              1, 1, 1,
+                              0, 1, 2];
+
+export const sobelWeights = [1, 0, 1,
+                             2, 0, 1,
+                             1, 0, 1];
+
+export const grainWeights = [ 1,  1,   1,
                                1, 0.7, -1,
                               -1, -1,  -1];
