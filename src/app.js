@@ -1,5 +1,7 @@
 import './app.scss';
-import greyscaleFilter from "./js/filters/greyscale";
+import * as Filters from "./js/filters/";
+import * as FilterTypes from "./js/filters/types";
+import * as Weights from "./js/filters/convolutionWeights";
 
 // Global variables
 let width = 500, height = 0, streaming = false;
@@ -13,6 +15,7 @@ const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
 stopButton.disabled = true;
 const filterSelect = document.getElementById("filter-select");
+const filterLevelContainer = document.getElementById("filter-level-container");
 const filterLevelSlider = document.getElementById("filter-level-slider");
 const levelValueOutput = document.getElementById("level-value");
 levelValueOutput.innerHTML = filterLevelSlider.value;
@@ -23,8 +26,6 @@ yearSpan.innerHTML = new Date().getFullYear().toString();
 startButton.addEventListener("click", event => {
   event.preventDefault();
   startStream();
-  startButton.disabled = true;
-  stopButton.disabled = false;
 }, false);
 
 stopButton.addEventListener("click", event => {
@@ -32,6 +33,15 @@ stopButton.addEventListener("click", event => {
   stopStream();
   startButton.disabled = false;
   stopButton.disabled = true;
+}, false);
+
+filterSelect.addEventListener("change", event => {
+  if (event.target.value === FilterTypes.ORIGINAL) {
+    filterLevelContainer.style.display = "none";
+  } else {
+    filterLevelContainer.style.display = "flex";
+
+  }
 }, false);
 
 filterLevelSlider.oninput = event => {
@@ -66,10 +76,16 @@ const outputVideoOnCanvas = () => {
 
       let selectedFilter = filterSelect.value;
       switch (selectedFilter) {
-        case "original":
+        case FilterTypes.ORIGINAL:
           break;
-        case "greyscale":
-          subpixels = greyscaleFilter(subpixels, factor);
+        case FilterTypes.GREYSCALE:
+          subpixels = Filters.greyscale(subpixels, factor);
+          break;
+        case FilterTypes.BRIGHTNESS:
+          subpixels = Filters.brightness(subpixels, factor);
+          break;
+        case FilterTypes.BLACK_AND_WHITE:
+          subpixels = Filters.blackAndWhite(subpixels, factor);
           break;
         default:
       }
@@ -86,11 +102,15 @@ const startStream = () => {
       video.srcObject = stream;
       playVideo = true;
       video.play()
-        .then(() => outputVideoOnCanvas())
+        .then(() => {
+          outputVideoOnCanvas();
+          startButton.disabled = true;
+          stopButton.disabled = false;
+        })
         .catch(err => console.log(err));
     })
     .catch(err => {
-      console.log(err);
+      alert(err);
     });
 };
 
@@ -100,11 +120,3 @@ const stopStream = () => {
   playVideo = false;
   video.srcObject = null;
 };
-
-
-// const duplicateStreamButton = document.getElementById("duplicate");
-// duplicateStreamButton.addEventListener("click", event => {
-//   outputVideoOnCanvas();
-//
-//   event.preventDefault();
-// }, false);

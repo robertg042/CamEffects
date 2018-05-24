@@ -1,4 +1,6 @@
 const greyscaleFilter = (subpixels, factor = 100) => {
+  console.log(subpixels);
+  console.log(subpixels.data);
   for( let i = 0; i < subpixels.data.length; i += 4 ) {
     const average = (
       subpixels.data[i] +

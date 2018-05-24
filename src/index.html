@@ -28,14 +28,14 @@
     <select name="filter-select" id="filter-select">
       <option value="original">Origin</option>
       <option value="greyscale">Greyscale</option>
+      <option value="brightness">Brightness</option>
+      <option value="black-and-white">Black and white</option>
     </select>
   </div>
   <div id="filter-level-container" class="labelled-controls">
     <label for="filter-level-slider">Choose filter intensity:</label>
-    <!--<span id="filter-level-outer" class="labelled-controls">-->
-      <input name="filter-level-slider" type="range" min="0" max="100" value="50" class="filter-level-slider" id="filter-level-slider">
-      <span id="level-value"></span>
-    <!--</span>-->
+    <input name="filter-level-slider" type="range" min="0" max="100" value="50" class="filter-level-slider" id="filter-level-slider">
+    <span id="level-value"></span>
   </div>
   <div id="photos"></div>
 </main>
