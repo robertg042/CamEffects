@@ -2,4 +2,111 @@
 @import "header";
 @import "footer";
 
+$canvasWidth: 500px;
+$canvasHeight: 375px;
+
+.main {
+  color: $light-grey;
+  font-size: 1.3rem;
+}
+
+#camera {
+  display: none;
+  box-sizing: border-box;
+}
+
+#canvas {
+  width: $canvasWidth;
+  height: $canvasHeight;
+  display: none;
+  margin: auto;
+  padding: 2rem 1rem 1rem 1rem;
+  box-sizing: border-box;
+}
+
+#canvas-placeholder {
+  width: $canvasWidth;
+  height: $canvasHeight;
+  margin: auto;
+  padding: 2rem 1rem 1rem 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7rem;
+  }
+}
+
+.block-control {
+  display: block;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.video-controls-button {
+  color: $middle-2;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 2rem;
+  outline: none;
+  &:disabled {
+    color: $middle-1;
+    cursor: auto;
+  }
+  &:hover {
+    color: lighten( $middle-2, 10% );
+  }
+  i {
+    transform: translateY(3%);
+  }
+}
+
+#filter-select {
+  margin-left: 0.5rem;
+  background-color: $dark-2;
+  color: $light;
+  border-color: $middle-2;
+  border-radius: 1rem;
+  padding: 0.2rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-radius 0.5s;
+  &:hover {
+    color: lighten( $light, 10% );
+  }
+  &:active {
+    border-radius: 1rem 1rem 0 0;
+  }
+}
+
+#filter-level-outer {
+  padding-top: 1rem;
+  display: flex;
+}
+
+#filter-level-slider {
+  display: inline-block;
+  margin-left: auto;
+}
+
+#level-value {
+  width: 4rem;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  vertical-align: top;
+  border: 2px solid $middle-2;
+  border-radius: 1.6rem;
+  background-color: $dark-2;
+  color: $light;
+  margin-left: 0.5rem;
+  margin-right: auto;
+  padding: 0.3rem;
+}
 

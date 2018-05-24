@@ -1,7 +1,7 @@
 @import 'variables';
 
 header {
-  margin: 0 auto 30px auto;
+  margin: 0 auto;
   text-align: center;
   background-color: $light;
   color: $dark-2;
@@ -10,6 +10,5 @@ header {
   h1 {
     text-align: center;
     display: block;
-
   }
 }
