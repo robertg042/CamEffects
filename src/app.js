@@ -1,7 +1,6 @@
 import './app.scss';
 import * as Filters from "./js/filters/";
 import * as FilterTypes from "./js/filters/types";
-import * as Weights from "./js/filters/convolutionWeights";
 
 // Global variables
 let width = 500, height = 0, streaming = false;
