@@ -1,6 +1,7 @@
 import './app.scss';
 import * as Filters from "./js/filters/";
 import * as FilterTypes from "./js/filters/types";
+import * as Weights from "./js/filters/convolutionWeights";
 
 // Global variables
 let width = 500, height = 0, streaming = false;
@@ -35,11 +36,19 @@ stopButton.addEventListener("click", event => {
 }, false);
 
 filterSelect.addEventListener("change", event => {
-  if (event.target.value === FilterTypes.ORIGINAL) {
-    filterLevelContainer.style.display = "none";
-  } else {
-    filterLevelContainer.style.display = "flex";
-
+  switch (event.target.value) {
+    case FilterTypes.ORIGINAL:
+    case FilterTypes.BLUR_GAUSSIAN:
+    case FilterTypes.BLUR_BOX:
+    case FilterTypes.SHARPEN: {
+      filterLevelContainer.style.display = "none";
+      break;
+    }
+    case FilterTypes.GREYSCALE:
+    case FilterTypes.BRIGHTNESS:
+    case FilterTypes.BLACK_AND_WHITE: {
+      filterLevelContainer.style.display = "flex";
+    }
   }
 }, false);
 
@@ -85,6 +94,15 @@ const outputVideoOnCanvas = () => {
           break;
         case FilterTypes.BLACK_AND_WHITE:
           subpixels = Filters.blackAndWhite(subpixels, factor);
+          break;
+        case FilterTypes.BLUR_GAUSSIAN:
+          subpixels = Filters.convolute(subpixels, Weights.gaussianBlurWeights);
+          break;
+        case FilterTypes.BLUR_BOX:
+          subpixels = Filters.convolute(subpixels, Weights.boxBlurWeights);
+          break;
+        case FilterTypes.SHARPEN:
+          subpixels = Filters.convolute(subpixels, Weights.sharpenWeights);
           break;
         default:
       }
