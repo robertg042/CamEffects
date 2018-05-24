@@ -4,6 +4,7 @@
 
 $canvasWidth: 500px;
 $canvasHeight: 375px;
+$padding-spacing: 0.8rem;
 
 .main {
   color: $light-grey;
@@ -12,23 +13,22 @@ $canvasHeight: 375px;
 
 #camera {
   display: none;
-  box-sizing: border-box;
 }
 
 #canvas {
   width: $canvasWidth;
   height: $canvasHeight;
   display: none;
-  margin: auto;
-  padding: 2rem 1rem 1rem 1rem;
+  margin: 1rem auto auto auto;
+  padding: 1rem 1rem 1rem 1rem;
   box-sizing: border-box;
 }
 
 #canvas-placeholder {
   width: $canvasWidth;
   height: $canvasHeight;
-  margin: auto;
-  padding: 2rem 1rem 1rem 1rem;
+  margin: 1rem auto auto auto;
+  padding: 1rem 1rem 1rem 1rem;
   box-sizing: border-box;
   text-align: center;
   position: relative;
@@ -41,11 +41,15 @@ $canvasHeight: 375px;
   }
 }
 
-.block-control {
-  display: block;
-  padding: 1rem;
-  box-sizing: border-box;
+.labelled-controls {
+  width: $canvasWidth;
+  padding: $padding-spacing;
+  margin: 0 auto;
+}
+
+#video-controls {
   text-align: center;
+  padding: $padding-spacing;
 }
 
 .video-controls-button {
@@ -60,7 +64,7 @@ $canvasHeight: 375px;
     color: $middle-1;
     cursor: auto;
   }
-  &:hover {
+  &:not(:disabled):hover {
     color: lighten( $middle-2, 10% );
   }
   i {
@@ -86,27 +90,23 @@ $canvasHeight: 375px;
   }
 }
 
-#filter-level-outer {
-  padding-top: 1rem;
+#filter-level-container {
   display: flex;
+  align-items: center;
 }
 
 #filter-level-slider {
-  display: inline-block;
-  margin-left: auto;
+  margin: 0 1rem;
 }
 
 #level-value {
-  width: 4rem;
+  width: 3rem;
   font-size: 1.6rem;
   line-height: 1.6rem;
-  vertical-align: top;
   border: 2px solid $middle-2;
   border-radius: 1.6rem;
   background-color: $dark-2;
   color: $light;
-  margin-left: 0.5rem;
-  margin-right: auto;
   padding: 0.3rem;
+  text-align: center;
 }
-

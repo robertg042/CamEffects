@@ -17,25 +17,25 @@
     <canvas id="canvas"></canvas>
     <div id="canvas-placeholder"><i class="fas fa-video"></i></div>
   </div>
-  <div id="video-controls" class="block-control">
+  <div id="video-controls">
     <button id="start" class="video-controls-button"><i class="far fa-play-circle"></i></button>
     <button id="stop" class="video-controls-button"><i class="far fa-stop-circle"></i></button>
   </div>
   <!--<button id="duplicate">Duplicate</button>-->
   <!--<button id="snap">Snap</button>-->
-  <div id="filter-select-container" class="block-control">
+  <div id="filter-select-container" class="labelled-controls">
     <label for="filter-select">Choose filter:</label>
     <select name="filter-select" id="filter-select">
       <option value="original">Origin</option>
       <option value="greyscale">Greyscale</option>
     </select>
   </div>
-  <div id="filter-level-container" class="block-control">
+  <div id="filter-level-container" class="labelled-controls">
     <label for="filter-level-slider">Choose filter intensity:</label>
-    <div id="filter-level-outer">
+    <!--<span id="filter-level-outer" class="labelled-controls">-->
       <input name="filter-level-slider" type="range" min="0" max="100" value="50" class="filter-level-slider" id="filter-level-slider">
       <span id="level-value"></span>
-    </div>
+    <!--</span>-->
   </div>
   <div id="photos"></div>
 </main>
