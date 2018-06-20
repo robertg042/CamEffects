@@ -38,11 +38,9 @@ stopButton.addEventListener("click", event => {
 filterSelect.addEventListener("change", event => {
   switch (event.target.value) {
     case FilterTypes.ORIGINAL:
-    case FilterTypes.BLUR_GAUSSIAN:
-    case FilterTypes.BLUR_BOX:
+    case FilterTypes.BLUR:
     case FilterTypes.SHARPEN:
-    case FilterTypes.GRAIN:
-    case FilterTypes.EDGE: {
+    case FilterTypes.GRAIN: {
       filterLevelContainer.style.display = "none";
       break;
     }
@@ -97,21 +95,14 @@ const outputVideoOnCanvas = () => {
         case FilterTypes.BLACK_AND_WHITE:
           subpixels = Filters.blackAndWhite(subpixels, factor);
           break;
-        case FilterTypes.BLUR_GAUSSIAN:
-          subpixels = Filters.convolute(subpixels, Weights.gaussianBlurWeights);
-          break;
-        case FilterTypes.BLUR_BOX:
-          subpixels = Filters.convolute(subpixels, Weights.boxBlurWeights);
+        case FilterTypes.BLUR:
+          subpixels = Filters.convolute(subpixels, Weights.blurWeights);
           break;
         case FilterTypes.SHARPEN:
           subpixels = Filters.convolute(subpixels, Weights.sharpenWeights);
           break;
         case FilterTypes.GRAIN:
           subpixels = Filters.convolute(subpixels, Weights.grainWeights);
-          break;
-        case FilterTypes.EDGE:
-          subpixels = Filters.greyscale(subpixels, 100);
-          subpixels = Filters.convolute(subpixels, Weights.edgeWeights);
           break;
         default:
       }
