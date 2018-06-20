@@ -126,8 +126,8 @@ const startStream = () => {
         })
         .catch(err => console.log(err));
     })
-    .catch(err => {
-      alert(err);
+    .catch(() => {
+      alert("Error: webcam not found");
     });
 };
 

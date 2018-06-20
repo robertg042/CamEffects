@@ -74,19 +74,10 @@ $padding-spacing: 0.8rem;
 
 #filter-select {
   margin-left: 0.5rem;
-  background-color: $dark-2;
-  color: $light;
-  border-color: $middle-2;
-  border-radius: 1rem;
   padding: 0.2rem;
   cursor: pointer;
-  outline: none;
-  transition: border-radius 0.5s;
   &:hover {
     color: lighten( $light, 10% );
-  }
-  &:active {
-    border-radius: 1rem 1rem 0 0;
   }
 }
 
