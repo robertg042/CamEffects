@@ -1,4 +1,11 @@
-export brightness from "./brightness";
-export greyscale from "./greyscale";
-export blackAndWhite from "./blackAndWhite";
-export convolute from "./convolute";
+import brightness from './brightness';
+import greyscale from './greyscale';
+import blackAndWhite from './blackAndWhite';
+import convolute from './convolute';
+
+export default {
+  brightness,
+  greyscale,
+  blackAndWhite,
+  convolute,
+};

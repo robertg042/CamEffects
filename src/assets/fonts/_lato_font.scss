@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'LatoWeb';
-  src: url('lato/Lato-Regular.eot'); /* IE9 Compatibility Modes */
-  src: url('lato/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('lato/Lato-Regular.woff2') format('woff2'),
-  url('lato/Lato-Regular.woff') format('woff'),
-  url('lato/Lato-Regular.ttf') format('truetype');
+  src: url('lato/Lato-Regular.eot');
+  /* IE9 Compatibility Modes */
+  src: url('lato/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('lato/Lato-Regular.woff2') format('woff2'),
+    url('lato/Lato-Regular.woff') format('woff'),
+    url('lato/Lato-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
-
 }

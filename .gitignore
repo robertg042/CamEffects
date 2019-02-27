@@ -1,3 +1,11 @@
 .idea/
-build/
+.vscode/
 node_modules/
+dist/
+.cache-loader/
+/.env
+*.code-workspace
+*.swp
+*.zip
+temp
+/stats.json

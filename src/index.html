@@ -1,47 +1,49 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Cam Effects</title>
+  <title>Cam Effects - see your camera feed with image pixels' transformations</title>
 </head>
+
 <body>
-<header class="main-header">
-  <h1>Cam Effects</h1>
-</header>
-<main class="main">
-  <video id="camera" src="">No video</video>
-  <div id="canvas-container">
-    <canvas id="canvas"></canvas>
-    <div id="canvas-placeholder"><i class="fas fa-video"></i></div>
-  </div>
-  <div id="video-controls">
-    <button id="start" class="video-controls-button"><i class="far fa-play-circle"></i></button>
-    <button id="stop" class="video-controls-button"><i class="far fa-stop-circle"></i></button>
-  </div>
-  <div id="filter-select-container" class="labelled-controls">
-    <label for="filter-select">Choose filter:</label>
-    <select name="filter-select" id="filter-select">
-      <option value="original">Original</option>
-      <option value="greyscale">Greyscale</option>
-      <option value="brightness">Brightness</option>
-      <option value="black-and-white">Black and white</option>
-      <option value="blur">Blur</option>
-      <option value="sharpen">Sharpen</option>
-      <option value="grain">Grain</option>
-    </select>
-  </div>
-  <div id="filter-level-container" class="labelled-controls">
-    <label for="filter-level-slider">Choose filter intensity:</label>
-    <input name="filter-level-slider" type="range" min="0" max="100" value="50" class="filter-level-slider" id="filter-level-slider">
-    <span id="level-value"></span>
-  </div>
-  <div id="photos"></div>
-</main>
-<footer class="footer">
-  <i class="fa fa-copyright"></i>  <span id="year"></span> Robert Górnicki
-</footer>
+  <header class="main-header">
+    <h1>Cam Effects</h1>
+  </header>
+  <main class="main">
+    <video id="camera" src="">No video</video>
+    <div id="canvas-container">
+      <canvas id="canvas"></canvas>
+      <div id="canvas-placeholder"><i class="fas fa-video"></i></div>
+    </div>
+    <div id="video-controls">
+      <button id="start" class="video-controls-button"><i class="far fa-play-circle"></i></button>
+      <button id="stop" class="video-controls-button"><i class="far fa-stop-circle"></i></button>
+    </div>
+    <div id="filter-select-container" class="labelled-controls">
+      <label for="filter-select">Choose filter:</label>
+      <select name="filter-select" id="filter-select">
+        <option value="original">Original</option>
+        <option value="greyscale">Greyscale</option>
+        <option value="brightness">Brightness</option>
+        <option value="black-and-white">Black and white</option>
+        <option value="blur">Blur</option>
+        <option value="sharpen">Sharpen</option>
+        <option value="grain">Grain</option>
+      </select>
+    </div>
+    <div id="filter-level-container" class="labelled-controls">
+      <label for="filter-level-slider">Choose filter intensity:</label>
+      <input name="filter-level-slider" type="range" min="0" max="100" value="50" class="filter-level-slider" id="filter-level-slider">
+      <span id="level-value"></span>
+    </div>
+    <div id="photos"></div>
+  </main>
+  <footer class="footer">
+    <i class="fa fa-copyright"></i> <span id="year">2019</span> Robert Górnicki
+  </footer>
 </body>
+
 </html>

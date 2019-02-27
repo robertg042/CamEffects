@@ -1,6 +1,4 @@
 @import "variables";
-@import "header";
-@import "footer";
 
 $canvasWidth: 500px;
 $canvasHeight: 375px;
@@ -32,7 +30,8 @@ $padding-spacing: 0.8rem;
   box-sizing: border-box;
   text-align: center;
   position: relative;
-  i {
+
+  svg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -60,24 +59,37 @@ $padding-spacing: 0.8rem;
   font-size: 2rem;
   line-height: 2rem;
   outline: none;
+
   &:disabled {
     color: $middle-1;
     cursor: auto;
   }
+
   &:not(:disabled):hover {
-    color: lighten( $middle-2, 10% );
+    color: lighten($middle-2, 10%);
   }
-  i {
+
+  svg {
     transform: translateY(3%);
   }
 }
 
-#filter-select {
-  margin-left: 0.5rem;
-  padding: 0.2rem;
-  cursor: pointer;
-  &:hover {
-    color: lighten( $light, 10% );
+#filter-select-container {
+  display: flex;
+
+  label {
+    margin: 0 0 0 auto;
+  }
+
+  #filter-select {
+    margin: 0 auto 0 0.5rem;
+    padding: 0.2rem;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: lighten($light, 10%);
+    }
   }
 }
 

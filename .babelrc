@@ -1,6 +1,11 @@
 {
+  "plugins": ["@babel/plugin-syntax-dynamic-import"],
   "presets": [
-    "env",
-    "stage-0"
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ]
   ]
 }
